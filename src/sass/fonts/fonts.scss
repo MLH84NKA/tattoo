@@ -1,0 +1,24 @@
+@font-face {
+    font-family: forum;
+    /* Имя шрифта */
+    src: url(../font/forum.woff) format('woff'),
+        url(../font/forum.ttf) format('truetype');
+    /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+    font-family: jost;
+    /* Имя шрифта */
+    src: url(../font/jost-regular.woff) format('woff'),
+        url(../font/jost-regular.ttf) format('truetype');
+        font-weight: 400;
+    /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: jost;
+    /* Имя шрифта */
+    src: url(../font/jost-bold.woff) format('woff'),
+        url(../font/jost-bold.ttf) format('truetype');
+        font-weight: 700;
+    /* Путь к файлу со шрифтом */
+}
