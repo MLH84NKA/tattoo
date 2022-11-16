@@ -1,20 +1,88 @@
+@use "sass:math";
 @import "fonts/fonts.scss";
 @import "vars/variables.scss";
+
+@mixin el {
+    display: flex;
+    align-items: center;
+}
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-.container{
-    max-width: 1236px;
-    padding: 0 10px;
+
+a {
+    text-decoration: none;
+    color: $white;
+}
+
+ul {
+    list-style: none;
+}
+
+body,
+button,
+input {
+    font-family: 'jost';
+    font-weight: 400;
+    font-size: 17px;
+    color: $white;
+}
+
+.container {
+    max-width: 1256px;
+    padding: 0 20px;
     margin: 0 auto;
 }
-.test{
+
+@mixin triangle($color, $site) {
+    border-style: solid;
+
+    @if $site == 1 {
+        border-width: 2px 0 2px 4px;
+        border-color: transparent transparent transparent $color;
+    }
+
+    @else {
+        border-width: 2px 4px 2px 0;
+        border-color: transparent $color transparent transparent;
+    }
+}
+
+.triangle {
+    position: relative;
+
+    &::after,
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        transform: translateY(-50%);
+    }
+
+    &::before {
+        top: 40%;
+        left: 0;
+        width: 0;
+        height: 0;
+        @include triangle($darkorange,1)
+    }
+
+    &::after {
+        top: 40%;
+        right: 0;
+        width: 0;
+        height: 0;
+        @include triangle($darkorange,2)
+    }
+}
+
+.test {
     font-size: 40px;
     font-family: 'forum';
     font-weight: 400;
 }
 
-@import "block/*.scss";
+@import "blocks/*.scss";

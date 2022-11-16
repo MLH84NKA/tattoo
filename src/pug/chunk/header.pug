@@ -1,36 +1,46 @@
+include ../../../data/vars
+mixin navigation(name, href)
+    li.subheader-list__item 
+        a(href=href).subheader-list__link= name
+            span.subheader-list__stick
+mixin communication(name,href)
+    li.header-list__item 
+        a(href=href).header-list__link= name 
 header.header
     .container
          .header__wrapper 
             .header__contacts
-                a.header__phone(href="#")
-
-                a.header__email(href="#") 
+                .header__communication
+                    a.header__phone(href="tel:89525525252")= '+7 952 552-52-52'
+                    ul.header-list
+                        each item in comm 
+                            +communication(item.name, item.href)
+                a.header__email(href="mailto:Mr.Driskell@mail.ru")= 'Mr.Driskell@mail.ru' 
             .header__logo
                 a.logo(href="index.html")
                     .logo__name MR. DRISKELL
                     span.logo__stick 
                     .logo__description TATTOO SHOP 
-            .hedaer__menu
+            .header__menu
                 .header-cart 
-                    a.header-cart__link(href="")
-                    .header-cart__price 
+                    .header-cart__price= '37 280 ₽'
+                    a.header-cart__link(href="#")
+                        span.header-cart__count= 17
                 a.header__favourite(href="#")
                 a.header__account(href="#")
-            span.header__line 
+         span.header__line.triangle 
          .subheader
             .subheader__wrapper 
-                .subheader__catalog 
-                .subheader__search
+                .subheader__catalog.subheader-catalog
+                    p.subheader-catalog__text= 'Каталог' 
+                    .subheader-catalog__burger.burger 
+                        span.burger__line.burger-topline 
+                        span.burger__line.burger-middleline
+                        span.burger__line.burger-bottomline 
+                .subheader-search
+                    input(type="text" placeholder='Поиск').subheader-search__input
                 nav.subheader__nav 
                     ul.subheader-list 
-                        li.subheader-list__item
-                            a.subheader-list__link(href="#")   
-                        li.subheader-list__item
-                            a.subheader-list__link(href="#")   
-                        li.subheader-list__item
-                            a.subheader-list__link(href="#")   
-                        li.subheader-list__item  
-                            a.subheader-list__link(href="#") 
-                        li.subheader-list__item  
-                            a.subheader-list__link(href="#") 
+                        each item in link
+                            +navigation(item.name,item.href)
 

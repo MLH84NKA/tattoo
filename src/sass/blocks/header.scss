@@ -1,0 +1,314 @@
+$square: calc(-1* math.sqrt(2)) + px;
+
+.header {
+    background-color: $black;
+    width: 100%;
+    padding-top: 14px;
+    padding-bottom: 12px;
+    overflow: hidden;
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__line {
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: $darkorange;
+        margin-top: 11px;
+        margin-bottom: 13px;
+    }
+
+    &__contacts {
+        display: flex;
+        align-items: center;
+        column-gap: 56px;
+        font-size: 15px;
+    }
+
+    &__communication {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__phone {
+        @include el;
+
+        padding-top: 24px;
+        transition: all .3s ease-in;
+
+        &:hover {
+            color: $orange;
+        }
+
+        &::before {
+            content: '';
+            width: 28px;
+            height: 28px;
+            background-image: url('../img/header/phone.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-right: 10px;
+        }
+
+    }
+
+    &__email {
+        @include el;
+        transition: all .3s ease-in;
+
+        &:hover {
+            color: $orange;
+        }
+
+        &::before {
+            content: '';
+            width: 28px;
+            height: 28px;
+            background-image: url('../img/header/message.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-right: 10px;
+        }
+    }
+
+    &__menu {
+        @include el;
+        column-gap: 50px;
+    }
+
+    &__favourite {
+        display: block;
+        width: 28px;
+        height: 28px;
+        background-image: url('../img/header/fav.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &__account {
+        display: block;
+        width: 28px;
+        height: 28px;
+        background-image: url('../img/header/account.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    &__logo{
+        padding-right: 110px;
+    }
+
+
+
+
+}
+
+.header-list {
+    display: flex;
+    column-gap: 10px;
+    margin-top: -5px;
+
+    &__link {
+        font-family: 'jost';
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: 400;
+        color: $gray;
+        transition: all .3s ease-in;
+
+        &:hover {
+            color: $orange;
+        }
+
+    }
+}
+
+.header-cart {
+    @include el;
+    font-size: 15px;
+    line-height: 22px;
+    margin-left: 5px;
+
+    &__link {
+        position: relative;
+        display: block;
+        width: 28px;
+        height: 28px;
+        background-image: url('../img/header/cart.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+
+    }
+
+    &__count {
+        position: absolute;
+        top: -10px;
+        right: -12px;
+        width: 24px;
+        height: 21px;
+        @include el;
+        justify-content: center;
+        background-color: $orange;
+    }
+}
+
+.logo {
+    color: $orange;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+    &__name {
+        font-size: 30px;
+        font-family: 'forum';
+        font-weight: 400;
+        line-height: 39px;
+    }
+
+    &__description {
+        font-size: 14px;
+        letter-spacing: 0.25em;
+        line-height: 21px;
+    }
+
+    &__stick {
+        position: relative;
+        width: calc(100% + 16px);
+        height: 1px;
+        background-color: $orange;
+
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 4px;
+            height: 4px;
+            background-color: $orange;
+            transform: rotate(45deg);
+        }
+
+        &::before {
+            left: 0;
+            top: $square;
+        }
+
+        &::after {
+            right: 0;
+            top: $square;
+        }
+    }
+}
+
+.subheader {
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.subheader-list {
+    display: flex;
+    align-items: center;
+    column-gap: 60px;
+    &__link{
+        position: relative;
+        transition: all .3s ease-in;
+        &:hover{
+            color: $orange;
+        }
+    }
+    &__stick{
+        position: absolute;
+        display: block;
+        transition: all .3s ease-in;
+        height: 16px;
+        width: 1px;
+        background-color: $orange;
+        left: 50%;
+        // bottom: -24px;
+        bottom: -40px;
+        &::before{
+            content: '';
+            position: absolute;
+            display: block;
+            width: 4px;
+            height: 4px;
+            background-color: $orange;
+            transform: rotate(45deg);
+            left: -1.5px;
+        }
+    }
+}
+.subheader-list__link:hover .subheader-list__stick{
+    bottom: -24px;
+}
+
+.subheader-catalog {
+    position: relative;
+
+    &__text {
+        font-size: 25px;
+        line-height: 35px;
+        padding-right: 34px;
+    }
+}
+
+.subheader-search {
+    position: relative;
+    flex: 0 1 418px;
+
+    &__input {
+
+        background-color: transparent;
+        border: 1px solid $darkorange;
+        padding: 11px 20px 10px 54px;
+        color: $gray2;
+        width: 100%;
+        transition: all .3s ease-in;
+        &:focus{
+            outline: none;
+            border-color: $orange;
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 18px;
+        height: 18px;
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: translateY(-50%);
+        top: 50%;
+        left: 22px;
+        background-image: url('../img/header/search.svg');
+    }
+
+}
+
+.burger {
+    position: absolute;
+    bottom: 1px;
+    right: 0px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    cursor: pointer;
+
+    &__line {
+
+        flex-direction: column;
+        height: 2px;
+        width: 24px;
+        background-color: $orange;
+
+    }
+}
