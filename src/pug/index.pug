@@ -4,16 +4,30 @@ block vars
     - let title = 'Main';
     
 block page
-    
+    include chunk/mixins   
     section.preview 
-        .container 
+         
             .swiper.mySwiper 
-                .swiper-wrapper 
-                    .swiper-slide= '1 слайд'
-                    .swiper-slide= '1 слайд'
-                    .swiper-slide= '1 слайд'
-                    .swiper-slide= '1'
-                .swiper-pagination
+                .swiper-wrapper
+                    each item in preview
+                        +slide(item.title,item.text,item.image)
+                .swiper-container
+                    .swiper-button-next 
+                    .swiper-button-prev
+                    .swiper-pagination
+    section.card
+        .container 
+            .card__tabs
+                .tabs 
+                    ul.tabs__list
+                        each item in tabs
+                            +tabs(item)        
+            .card__wrapper
+                .card__cell.card-cell 
+                    .card-cell__wrapper 
+                        .card-cell__flag
+            button(type="button", value="Показать ещё").card__button
+
 
 
     script(src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js")

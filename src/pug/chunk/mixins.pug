@@ -1,0 +1,13 @@
+mixin slide(title, text, image)
+    - var path = 'url(img/preview/' + image + ')';
+    .swiper-slide(style="background-image:" + path + ";")
+        .container 
+            .slide
+                .slide__wrapper 
+                    .slide__title= title
+                    .slide__text= text
+
+mixin tabs(name)
+    
+            li.tabs__item 
+                a.tabs__link= name
