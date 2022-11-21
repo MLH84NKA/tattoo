@@ -1,4 +1,5 @@
 .swiper {
+    position: relative;
     &-wrapper {
         max-height: 700px;
 
@@ -10,23 +11,33 @@
         background-repeat: no-repeat;
     }
     &-pagination-vertical.swiper-pagination-bullets{
-        right: calc(50% - 610px);
+        position: unset;
+        margin: 0;
+        transform: none;
+
+        
     }
     &-button-prev{
+        margin: 0;
+        margin-bottom: 5px;
+        position: unset;
         background-image: url(/img/preview/prev.svg);
         background-position: center;
         background-repeat: no-repeat;
-        width: 80px;
+        width: 40px;
         height: 70px;
         &::after{
             content: '';
         }
     }
     &-button-next{
+        position: unset;
+        margin: 0;
+        margin-top: 5px;
         background-image: url(/img/preview/next.svg);
         background-position: center;
         background-repeat: no-repeat;
-        width: 80px;
+        width: 56px;
         height: 90px;
         &::after{
             content: '';
@@ -40,9 +51,54 @@
 // .swiper-pagination-vertical.swiper-pagination-bullets, .swiper-vertical>.swiper-pagination-bullets{
 //     right: 200px;
 // }
-// .swiper-container{
-//     position: relative;
-//     margin: 0 auto;
-//     max-width: 1256px;
-//     padding: 0 20px;
-// }
+.swiper-container{
+    position: absolute;
+    top: 72%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 2;
+    width: 1236px;
+    // right: calc(50% - 710px);
+    max-width: 1256px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 1170px;
+    
+}
+.swiper-buttons{
+    // position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+// Pagination
+
+.swiper-pagination-bullet{
+    background: url(../img/preview/inactive.svg);
+    width: 16px;
+    height: 16px;
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0;
+    
+}
+.swiper-pagination-bullet-active{
+    background: url(../img/preview/active.svg);
+    width: 16px;
+    height: 16px;
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0;
+    
+
+}
+.swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-vertical>.swiper-pagination-bullets .swiper-pagination-bullet{
+    margin: 15px 0;
+}

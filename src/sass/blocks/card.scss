@@ -1,0 +1,51 @@
+.card{
+
+}
+.tabs{
+    padding: 0 20px;
+    &__list{
+        margin-top: 120px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__link{
+        position: relative;
+        color: $dark;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 115%;
+        cursor: pointer;
+        transition: all .3s ease-in;
+        border-bottom: 2px solid transparent;
+        &::before,
+        &::after{
+            content: '';
+            display: block;
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background-color: $orange;
+            transform: rotate(45deg);
+            transition: all .3s ease-in;
+            bottom: -4px;
+            opacity: 0;
+        }
+        &::before{
+            
+            right: -6px;
+        }
+        &::after{
+            left: -6px;
+        }
+        &:hover{
+            border-bottom: 2px solid $orange;
+            color: $orange;
+        }
+        
+    }
+}
+
+.tabs__link:hover.tabs__link::after,
+.tabs__link:hover.tabs__link::before{
+    opacity: 1;
+}

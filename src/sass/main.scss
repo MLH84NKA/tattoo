@@ -30,7 +30,12 @@ input {
     font-size: 17px;
     color: $white;
 }
-
+button{
+    cursor: pointer;
+}
+body{
+    background-color: $white2;
+}
 .container {
     max-width: 1256px;
     padding: 0 20px;

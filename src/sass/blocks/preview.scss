@@ -2,3 +2,40 @@
     width: 100%;
     background: $black;
 }
+.slide{
+    &__title{
+        font-family: 'forum';
+        font-size: 75px;
+        color: $orange;
+        max-width: 594px;
+        margin-top: 110px;
+        margin-bottom: 30px;
+        text-align: start;
+    }
+    &__text{
+        max-width: 431px;
+        font-size: 25px;
+        margin-bottom: 60px;
+    }
+    &__button{
+        background-color: $darkorange;
+        display: flex;
+        width: 275px;
+        height: 70px;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        border: 2px solid $orange;
+        cursor: pointer;
+        &::after{
+            content: '';
+            display: block;
+            width: 0px;
+            height: 0px;
+            border-style: solid;
+            border-width: 11px 22px 11px 0;
+            border-color: transparent #FF4532 transparent transparent;
+            transform: rotate(0deg);
+        }
+    }
+}
