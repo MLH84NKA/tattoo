@@ -1,0 +1,31 @@
+.catalog{
+    &__title{
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    &__list{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px;
+    }
+}
+.catalog-cell{
+    position: relative;
+    background-color: $bgcart;
+    min-height: 350px;
+    &__text{
+        position: absolute;
+        top: 40px;
+        left: 50px;
+        z-index: 2;
+        color: $dark;
+        font-size: 30px;
+        font-weight: 700;
+    }
+    &__holders{
+        grid-column: 2/4;
+    }
+    &__sets{
+        grid-row: 1;
+    }
+}

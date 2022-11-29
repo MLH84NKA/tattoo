@@ -1,3 +1,4 @@
+include ../../../data/vars
 mixin slide(title, text, image)
     - var path = 'url(img/preview/' + image + ')';
     .swiper-slide(style="background-image:" + path + ";")
@@ -12,3 +13,29 @@ mixin tabs(name)
     
             li.tabs__item 
                 a.tabs__link= name
+
+
+mixin card(name, flag, fav, price, photoes)
+    .card__cell.card-cell 
+        .card-cell__wrapper 
+            div(class= flag + ' card-cell__flag')
+            if fav == 1 
+                 .card-cell__like.card-cell__like--active 
+            else 
+                 .card-cell__like
+            .product 
+                .product__image
+                    .product__switch.image-switch
+                        each item in photoes
+                                .image-switch__item
+                                    img(src="img/cell/" + item + ".jpg", alt=item)
+                        ul(aria-hidden='true').product__image-pagination.image-pagination
+            .card-cell__name= name
+            .card-cell__price= price
+
+mixin catalog(text, imgpath)
+    li(class="catalog-cell catalog-cell__"+imgpath)
+        a.catalog-cell__link(href="#")
+            p.catalog-cell__text= text 
+            img(src="/img/catalog/" + imgpath + "jpg", alt=imgpath, class="catalog-cell__img catalog-cell__" + imgpath)  
+

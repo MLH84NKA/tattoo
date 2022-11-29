@@ -55,7 +55,11 @@ body{
         border-color: transparent $color transparent transparent;
     }
 }
-
+.title{
+    color: $dark;
+    font-size: 60px;
+    font-family: 'forum';
+}
 .triangle {
     position: relative;
 

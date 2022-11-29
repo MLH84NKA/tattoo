@@ -1,5 +1,56 @@
 .card{
-
+    &__more{
+        display: flex;
+        justify-content: center;
+    }
+    &__button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid $orange;
+        color: $orange;
+        font-size: 20px;
+        width: 275px;
+        height: 70px;
+        background-color: transparent;
+        margin-top: 50px;
+        margin-bottom: 120px;
+        
+    }
+    &__wrapper{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 37px;
+    }
+}
+.card-cell{
+    &__wrapper{
+        background-color: $bgcart;
+        padding: 30px;
+        color: $orange;
+        position: relative;
+    }
+    &__price{
+        font-size: 24px;
+        font-weight: 700;
+    }
+    &__name{
+        color: $dark;
+        font-size: 17px;
+        max-width: 229px;
+    }
+    &__like{
+        position: absolute;
+        top: 30px;
+        right: 30px;
+    }
+    &__flag{
+        position: absolute;
+        top: 30px;
+        left: 30px;
+    }
 }
 .tabs{
     padding: 0 20px;
@@ -48,4 +99,10 @@
 .tabs__link:hover.tabs__link::after,
 .tabs__link:hover.tabs__link::before{
     opacity: 1;
+}
+.image-switch{
+
+    &__item{
+        margin: 0 -30px 0 -30px;
+    }
 }

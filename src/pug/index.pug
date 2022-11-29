@@ -27,11 +27,27 @@ block page
                         each item in tabs
                             +tabs(item)        
             .card__wrapper
-                .card__cell.card-cell 
-                    .card-cell__wrapper 
-                        .card-cell__flag
-            button(type="button", value="Показать ещё").card__button
+                - let count = 0
+                 each el in cell
+                    +card(el.name, el.flag,el.fav, el.price, el.photoes)
+                    
+            .card__more
+                button(type="button",).card__button Показать ещё
 
+    section.catalog 
+        .container 
+            .catalog__title.title Каталог
+            ul.catalog__list 
+                each el in catalog 
+                    +catalog(el.text,el.imgpath)
+    section.popular 
+        .popular__wrapper 
+            .popular-cell.popular__cell--left 
+                .popular-cell__text.popular-cell__text--left Краски Lip Nitn
+                a(href="#").popular-cell__link Смотреть в каталоге
+            .popular-cell.popular__cell--right 
+                .popular-cell__text Foxx viper — хит 2021 года
+                a(href="#").popular-cell__link Смотреть в каталоге
 
 
     script(src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js")
